@@ -1,0 +1,46 @@
+{
+  "name": "astro-todoapp",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:prod": "wrangler d1 migrations apply todo-app-d1 --remote",
+    "db:migrate:local": "wrangler d1 migrations apply todo-app-d1 --local",
+    "db:push": "drizzle-kit push:sqlite",
+    "db:studio": "drizzle-kit studio",
+    "test:db": "node --loader ts-node/esm --experimental-specifier-resolution=node src/db/test.ts"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.1.0",
+    "@astrojs/react": "^4.1.2",
+    "@astrojs/tailwind": "^5.1.4",
+    "@libsql/client": "^0.14.0",
+    "astro": "^5.1.0",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "drizzle-orm": "^0.38.3",
+    "postcss": "^8.4.49",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.83.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^22.10.2",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "better-sqlite3": "^11.7.0",
+    "cross-env": "^7.0.3",
+    "drizzle-kit": "^0.30.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2",
+    "wrangler": "^3.99.0"
+  }
+}
