@@ -2,20 +2,12 @@
 import TodoApp from "../components/TodoApp";
 let res;
 
-const getBaseURL = () => {
-  if (typeof window !== "undefined") {
-    return window.location.origin;
-  } else {
-    return "http://localhost:4321";
-  }
-};
-
 const fetchTodos = async () => {
-  const baseURL = getBaseURL();
-      const data = await fetch(`${baseURL}api/todos.json`);
+  const baseURL = "https://astro-todoapp.pages.dev";
+      const data = await fetch(`${baseURL}/api/todos.json`);
       res = await data.json();
 };
-
+  
 await fetchTodos();
 ---
 

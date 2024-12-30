@@ -10,6 +10,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
     const body = await request.json();
     const { title, description } = body;
 
+    console.log("request--", request);
+
     if (!title || !description) {
       return new Response(
         JSON.stringify({ error: "Missing required fields" }),

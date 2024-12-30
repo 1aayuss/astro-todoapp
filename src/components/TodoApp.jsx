@@ -13,7 +13,9 @@ export default function TodoApp({ res }) {
       title: newTitle,
       description: newDescription,
     });
-    if (response.success) {
+    console.log(response);
+
+    if (response.data.success) {
       setTodos((prevTodos) => [...prevTodos, response.data]);
     } else {
       alert("Error adding todo");
