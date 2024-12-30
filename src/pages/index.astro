@@ -12,7 +12,7 @@ const getBaseURL = () => {
 
 const fetchTodos = async () => {
   const baseURL = getBaseURL();
-      const data = await fetch(`${baseURL}/api/todos.json`);
+      const data = await fetch(`${baseURL}api/todos.json`);
       res = await data.json();
 };
 
