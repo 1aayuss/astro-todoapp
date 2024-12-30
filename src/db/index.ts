@@ -39,7 +39,7 @@ export const todoDb = {
         .returning()
         .get();
 
-      console.log("Created todo:", result);
+      // console.log("Created todo:", result);
       return result.id;
     } catch (error) {
       console.error("Failed to create todo:", error);
@@ -64,7 +64,7 @@ export const todoDb = {
       if (!updatedTodo) {
         console.warn("Todo not found for update:", id);
       } else {
-        console.log("Updated todo:", updatedTodo);
+        // console.log("Updated todo:", updatedTodo);
       }
       return updatedTodo;
     } catch (error) {
@@ -88,7 +88,7 @@ export const todoDb = {
       if (!deletedTodo) {
         console.warn("Todo not found for deletion:", id);
       } else {
-        console.log("Deleted todo:", deletedTodo);
+        // console.log("Deleted todo:", deletedTodo);
       }
       return deletedTodo;
     } catch (error) {
@@ -117,7 +117,7 @@ export const todoDb = {
         .returning()
         .get();
 
-      console.log("Toggled completion status for todo:", updatedTodo);
+      // console.log("Toggled completion status for todo:", updatedTodo);
       return updatedTodo;
     } catch (error) {
       console.error("Failed to toggle completion status:", error);

@@ -50,7 +50,7 @@ export const POST: APIRoute = async ({ request, locals }) => {
 export const GET: APIRoute = async ({ locals }) => {
   try {
     const { DB } = locals;
-    console.log("DB========:", DB);
+    // console.log("DB========:", DB);
     const todos = await todoDb.getAll(DB);
     return new Response(JSON.stringify({ todos }), {
       status: 200,

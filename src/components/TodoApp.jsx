@@ -1,19 +1,11 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export default function TodoApp() {
-  const [todos, setTodos] = useState([]);
+export default function TodoApp({ res }) {
+  const [todos, setTodos] = useState(res.todos);
   const [newTitle, setNewTitle] = useState("");
   const [newDescription, setNewDescription] = useState("");
   const [editId, setEditId] = useState(0);
-
-  useEffect(() => {
-    const fetchTodos = async () => {
-      const response = await axios.get("/api/todos.json");
-      setTodos(response.data.todos);
-    };
-    fetchTodos();
-  }, []);
 
   const handleAddTodo = async () => {
     if (!newTitle.trim()) return;
@@ -21,7 +13,11 @@ export default function TodoApp() {
       title: newTitle,
       description: newDescription,
     });
-    setTodos((prevTodos) => [...prevTodos, response.data]);
+    if (response.success) {
+      setTodos((prevTodos) => [...prevTodos, response.data]);
+    } else {
+      alert("Error adding todo");
+    }
     setNewTitle("");
     setNewDescription("");
   };
