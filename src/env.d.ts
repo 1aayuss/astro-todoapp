@@ -9,5 +9,16 @@ declare namespace App {
   interface Locals extends Runtime {}
   interface Locals {
     DB: DrizzleD1Database;
-  }s
+  }
 }
+
+interface ImportMetaEnv {
+  readonly SUPABASE_URL: string
+  readonly SUPABASE_ANON_KEY: string
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
+
+
