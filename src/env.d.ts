@@ -9,5 +9,5 @@ declare namespace App {
   interface Locals extends Runtime {}
   interface Locals {
     DB: DrizzleD1Database;
-  }s
+  }
 }
